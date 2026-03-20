@@ -3,7 +3,7 @@ name: App Builder Deploy
 on:
   push:
     branches:
-      - main
+      - stage
   workflow_dispatch:
     inputs:
       target_environment:
@@ -16,10 +16,10 @@ on:
           - stage
 
 jobs:
-  deploy-dev-on-main:
+  deploy-stage-on-stage-branch:
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
-    environment: dev
+    environment: stage
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -42,7 +42,7 @@ jobs:
       - name: Verify CLI
         run: aio --version
 
-      - name: Deploy to Dev
+      - name: Deploy to Stage
         run: aio app deploy
         env:
           AIO_runtime_auth: ${{ secrets.AIO_RUNTIME_AUTH }}
