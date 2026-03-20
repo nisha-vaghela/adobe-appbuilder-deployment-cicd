@@ -3,7 +3,7 @@ name: App Builder Deploy
 on:
   push:
     branches:
-      - stage
+      - stag
   workflow_dispatch:
     inputs:
       target_environment:
@@ -16,7 +16,7 @@ on:
           - stage
 
 jobs:
-  deploy-stage-on-stage-branch:
+  deploy-stage-on-stag-branch:
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
     environment: stage
