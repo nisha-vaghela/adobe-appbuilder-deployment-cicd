@@ -1,0 +1,8 @@
+{
+  "name": "nishaappbuilder",
+  "displayName": "Nisha App Builder",
+  "description": "Custom Admin Menu Extension for Adobe Commerce via Admin UI SDK",
+  "platform": "web",
+  "id": "nishaappbuilder",
+  "version": "1.0.0"
+}

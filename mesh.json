@@ -1,0 +1,40 @@
+{
+  "meshConfig": {
+    "sources": [
+      {
+        "name": "ProductSource",
+        "handler": {
+          "JsonSchema": {
+            "baseUrl": "https://748062-nishaappbuilder-stage.adobeio-static.net/api/v1/web/nishaappbuilder",
+            "operations": [
+              {
+                "type": "Query",
+                "field": "productBySku",
+                "path": "/mesh-products?sku={args.sku}",
+                "method": "GET",
+                "responseSample": "./samples/mp.json"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "InventorySource",
+        "handler": {
+          "JsonSchema": {
+            "baseUrl": "https://748062-nishaappbuilder-stage.adobeio-static.net/api/v1/web/nishaappbuilder",
+            "operations": [
+              {
+                "type": "Query",
+                "field": "inventoryBySku",
+                "path": "/mesh-inventory?sku={args.sku}",
+                "method": "GET",
+                "responseSample": "./samples/mi.json"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+operations:
+  view:
+    - type: web
+      impl: index.html
+actions: actions
+web: web-src
+runtimeManifest:
+  packages:
+    admin-ui-sdk:
+      license: Apache-2.0
+      actions:
+        registration:
+          function: actions/registration/index.js
+          web: 'yes'
+          runtime: 'nodejs:22'
+          inputs:
+            LOG_LEVEL: debug
+            MESH_ID: $MESH_ID
+          annotations:
+            require-adobe-auth: false
+            final: true
+    NishaAppBuilder:
+      license: Apache-2.0
+      actions:
+        get-customers:
+          function: ../../actions/get-customers/index.js
+          web: 'yes'
+          runtime: 'nodejs:22'
+          inputs:
+            LOG_LEVEL: debug
+            COMMERCE_CONSUMER_KEY: $M247_COMMERCE_CONSUMER_KEY
+            COMMERCE_CONSUMER_SECRET: $M247_COMMERCE_CONSUMER_SECRET
+            COMMERCE_ACCESS_TOKEN: $M247_COMMERCE_ACCESS_TOKEN
+            COMMERCE_ACCESS_TOKEN_SECRET: $M247_COMMERCE_ACCESS_TOKEN_SECRET
+            BASE_URL: $M247_BASE_URL
+          annotations:
+            require-adobe-auth: false
+            final: true
+        get-product-by-sku:
+          function: ../../actions/get-product-by-sku/index.js
+          web: 'yes'
+          runtime: 'nodejs:22'
+          inputs:
+            LOG_LEVEL: debug
+            COMMERCE_CONSUMER_KEY: $COMMERCE_CONSUMER_KEY
+            COMMERCE_CONSUMER_SECRET: $COMMERCE_CONSUMER_SECRET
+            COMMERCE_ACCESS_TOKEN: $COMMERCE_ACCESS_TOKEN
+            COMMERCE_ACCESS_TOKEN_SECRET: $COMMERCE_ACCESS_TOKEN_SECRET
+            BASE_URL: $BASE_URL
+          annotations:
+            require-adobe-auth: true
+            final: true
+        paas:
+          function: ../../actions/paas/index.js
+          web: 'yes'
+          runtime: 'nodejs:22'
+          inputs:
+            LOG_LEVEL: debug
+            COMMERCE_CONSUMER_KEY: $COMMERCE_CONSUMER_KEY
+            COMMERCE_CONSUMER_SECRET: $COMMERCE_CONSUMER_SECRET
+            COMMERCE_ACCESS_TOKEN: $COMMERCE_ACCESS_TOKEN
+            COMMERCE_ACCESS_TOKEN_SECRET: $COMMERCE_ACCESS_TOKEN_SECRET
+            BASE_URL: $BASE_URL
+          annotations:
+            require-adobe-auth: true
+            final: true

@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "customerGridColumns": {
+      "type": "object",
+      "patternProperties": {
+        "^[0-9*]+$": {
+          "type": "object",
+          "properties": {
+            "loyalty_status": {
+              "type": "string"
+            },
+            "total_orders": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "customerGridColumns"
+  ]
+}

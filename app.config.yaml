@@ -1,0 +1,150 @@
+application:
+  actions: actions
+  web: web-src
+  runtimeManifest:
+    packages:
+      nishaappbuilder:
+        license: Apache-2.0
+        actions:
+          custom:
+            function: actions/custom/index.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+            annotations:
+              require-adobe-auth: false
+              final: true
+          custom2:
+            function: actions/custom2/index.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+            annotations:
+              require-adobe-auth: false
+              final: true
+          get-product:
+            function: actions/get-product/index.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+            annotations:
+              require-adobe-auth: false
+              final: true
+          paas:
+            function: actions/paas/index.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+              COMMERCE_CONSUMER_KEY: $COMMERCE_CONSUMER_KEY
+              COMMERCE_CONSUMER_SECRET: $COMMERCE_CONSUMER_SECRET
+              COMMERCE_ACCESS_TOKEN: $COMMERCE_ACCESS_TOKEN
+              COMMERCE_ACCESS_TOKEN_SECRET: $COMMERCE_ACCESS_TOKEN_SECRET
+              BASE_URL: $BASE_URL
+            annotations:
+              require-adobe-auth: false
+              final: true
+          get-product-by-sku:
+            function: actions/get-product-by-sku/index.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+              COMMERCE_CONSUMER_KEY: $COMMERCE_CONSUMER_KEY
+              COMMERCE_CONSUMER_SECRET: $COMMERCE_CONSUMER_SECRET
+              COMMERCE_ACCESS_TOKEN: $COMMERCE_ACCESS_TOKEN
+              COMMERCE_ACCESS_TOKEN_SECRET: $COMMERCE_ACCESS_TOKEN_SECRET
+              BASE_URL: $BASE_URL
+            annotations:
+              require-adobe-auth: false
+              final: true
+          product-crud:
+            function: actions/product-crud/index.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+              OBSERVABILITY_WEB_ACTION_URL: $OBSERVABILITY_WEB_ACTION_URL
+            annotations:
+              require-adobe-auth: false
+              final: true
+          file-manager:
+            function: actions/file-manager/index.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+            annotations:
+              require-adobe-auth: false
+              final: true
+          mesh-products:
+            function: actions/mesh-products/index.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+              COMMERCE_CONSUMER_KEY: $M247_COMMERCE_CONSUMER_KEY
+              COMMERCE_CONSUMER_SECRET: $M247_COMMERCE_CONSUMER_SECRET
+              COMMERCE_ACCESS_TOKEN: $M247_COMMERCE_ACCESS_TOKEN
+              COMMERCE_ACCESS_TOKEN_SECRET: $M247_COMMERCE_ACCESS_TOKEN_SECRET
+              BASE_URL: $M247_BASE_URL
+            annotations:
+              require-adobe-auth: false
+              final: true
+          mesh-inventory:
+            function: actions/mesh-inventory/index.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+              COMMERCE_CONSUMER_KEY: $M247_COMMERCE_CONSUMER_KEY
+              COMMERCE_CONSUMER_SECRET: $M247_COMMERCE_CONSUMER_SECRET
+              COMMERCE_ACCESS_TOKEN: $M247_COMMERCE_ACCESS_TOKEN
+              COMMERCE_ACCESS_TOKEN_SECRET: $M247_COMMERCE_ACCESS_TOKEN_SECRET
+              BASE_URL: $M247_BASE_URL
+            annotations:
+              require-adobe-auth: false
+              final: true
+          api-mesh:
+            function: actions/api-mesh/index.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+              MESH_ENDPOINT: $MESH_ENDPOINT
+            annotations:
+              require-adobe-auth: false
+              final: true
+          debug-logs:
+            function: actions/debug-logs/index.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+              NEW_RELIC_LICENSE_KEY: $NEW_RELIC_LICENSE_KEY
+            annotations:
+              require-adobe-auth: false
+              final: true
+          observability:
+            function: actions/observability/index.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+              NEW_RELIC_LICENSE_KEY: $NEW_RELIC_LICENSE_KEY
+            annotations:
+              require-adobe-auth: false
+              final: true
+          publish-events:
+            function: actions/publish-events/index.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+              apiKey: $SERVICE_API_KEY
+            annotations:
+              require-adobe-auth: true
+              final: true
