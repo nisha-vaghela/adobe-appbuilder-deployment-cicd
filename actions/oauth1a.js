@@ -42,13 +42,13 @@ function createClient(options, authOptions, logger) {
   const serverUrl = options.url;
   const apiVersion = options.version;
 
-  let getAuthorizationHeaders = (opts) => {
+  let getAuthorizationHeaders = () => {
     throw new Error("getAuthorizationHeaders not implemented");
   };
 
   if (authOptions?.ims) {
     const { ims } = authOptions;
-    getAuthorizationHeaders = async (_opts) => {
+    getAuthorizationHeaders = async () => {
       const imsResponse = await getImsAccessToken(ims);
       return {
         Authorization: withBearer(imsResponse.access_token),

@@ -1,5 +1,5 @@
 const { Core } = require('@adobe/aio-sdk')
-const { errorResponse, stringParameters } = require('../utils')
+const { errorResponse } = require('../utils')
 const { getClient } = require('../oauth1a')
 
 async function main(params) {
